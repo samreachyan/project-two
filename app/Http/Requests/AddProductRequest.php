@@ -1,27 +1,40 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Requests;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Http\FormRequest;
 
-class ProductController extends Controller
+class AddProductRequest extends FormRequest
 {
-    public function getProduct () {
-        return view('admin.product.product');
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
     }
-    public function getAddProduct () {
-        return view('admin.product.add_product');
-    }
-    public function postAddProduct(request $request){
-        $request->validate([
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
             'code'=>'required|min:3',
             'name'=>'required|min:3',
             'price'=>'required|numeric',
             'info'=>'required|min:10',
             'describe'=>'required|min:10',
             'img'=>'image'
-        ],[
+        ];
+    }
+    public function messages()
+    {
+        return [
             'code.required'=>'Không được để trống Mã sản phẩm',
             'code.min'=>'Mã Sản phâmr không được nhỏ hơn 3 ký tự',
             'name.required'=>'Không được để trống Tên sản phẩm',
@@ -32,10 +45,7 @@ class ProductController extends Controller
             'info.min'=> 'Thoong tin sản phẩm không được nhỏ hơn 10 ký tự',
             'describe.required' => 'Không được để trống mo ta sản phẩm',
             'describe.min'=> 'Describe sản phẩm không được nhỏ hơn 10 ký tự',
-            'img.image'=>' Ảnh sản phẩm không đúng định dạng'
-        ]);
-    }
-    public function getEditProduct () {
-        return view('admin.product.edit_product');
+            'img.image'=>' Ảnh sản phẩm không đúng định dạng',
+        ];
     }
 }
