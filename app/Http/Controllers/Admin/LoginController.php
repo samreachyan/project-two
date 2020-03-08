@@ -12,6 +12,6 @@ class LoginController extends Controller
         return view('admin.login.login');
     }
     public function postLogin(loginRequest $request) {
-        
+        // $validate = $request->validated();
     }
 }

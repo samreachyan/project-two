@@ -32,11 +32,14 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/product/edit', 'Admin\ProductController@getEditProduct');
 
     Route::get('/client', 'Admin\ClientController@getClient');
-    Route::get('/client/add', 'Admin\ClientController@getAddClient');
     Route::get('/client/edit', 'Admin\ClientController@getEditClient');
 
     Route::get('/order', 'Admin\OrderController@getOrder');
 
     Route::get('/user', 'Admin\UserController@getUser');
-    
+    Route::get('/user/add', 'Admin\UserController@getAddUser');
+    Route::post('/user/add', 'Admin\UserController@postAddUser');
+    Route::get('/user/edit', 'Admin\UserController@getEditUser');
+    Route::post('/user/edit', 'Admin\UserController@postEditUser');
+
 });

@@ -34,7 +34,7 @@
                                     <use xlink:href="#stroked-checkmark"></use>
                                 </svg>Đã thêm thành công<a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
                             </div>
-                            <a href="adduser.html" class="btn btn-primary">Thêm Thành viên</a>
+                            <a href="/admin/user/add" class="btn btn-primary">Thêm Thành viên</a>
                             <table class="table table-bordered" style="margin-top:20px;">
 
                                 <thead>
@@ -58,7 +58,7 @@
                                         <td>0356653300</td>
                                         <td>1</td>
                                         <td>
-                                            <a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
+                                            <a href="/admin/user/edit" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
                                             <a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                         </td>
                                     </tr>

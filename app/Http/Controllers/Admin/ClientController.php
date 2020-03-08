@@ -11,10 +11,6 @@ class ClientController extends Controller
         return view('admin.client.client');
     }
 
-    public function getAddClient () {
-        return view('admin.client.add_client');
-    }
-
     public function getEditClient() {
         return view('admin.client.edit_client');
     }

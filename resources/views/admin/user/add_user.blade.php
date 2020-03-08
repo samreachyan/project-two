@@ -16,31 +16,34 @@
 				<div class="panel-heading"><i class="fas fa-user"></i> Thêm thành viên</div>
 				<div class="panel-body">
 					<div class="row justify-content-center" style="margin-bottom:40px">
-
+						<form method="post">
+							@csrf
 						<div class="col-md-8 col-lg-8 col-lg-offset-2">
 						 
 							<div class="form-group">
 								<label>Email</label>
-								<input type="text" name="email" class="form-control">
-							  <div class="alert alert-danger" role="alert">
-								  <strong>email đã tồn tại!</strong>
-							  </div>
+								<input type="text" name="email" class="form-control" value=" {{ old('email') }}">
+								{{ showError($errors, 'email')}}
 							</div>
 							<div class="form-group">
 								<label>password</label>
-								<input type="text" name="password" class="form-control">
+								<input type="password" name="password" class="form-control">
+								{{ showError($errors, 'password')}}
 							</div>
 							<div class="form-group">
 								<label>Full name</label>
 								<input type="full" name="full" class="form-control">
+								{{ showError($errors, 'full')}}
 							</div>
 							<div class="form-group">
 								<label>Address</label>
 								<input type="address" name="address" class="form-control">
+								{{ showError($errors, 'address')}}
 							</div>
 							<div class="form-group">
 								<label>Phone</label>
 								<input type="phone" name="phone" class="form-control">
+								{{ showError($errors, 'phone')}}
 							</div>
 						  
 							<div class="form-group">
@@ -58,8 +61,7 @@
 								<button class="btn btn-danger" type="reset">Huỷ bỏ</button>
 							</div>
 						</div>
-					   
-
+					</form>
 					</div>
 				
 					<div class="clearfix"></div>

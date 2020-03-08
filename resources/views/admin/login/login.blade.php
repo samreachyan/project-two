@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vietpro Mobile Shop - Administrator</title>
+<title>Shop - Administrator</title>
 
 <base href=" {{ asset("backend") }}/">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -35,7 +35,7 @@
 							</div>
 							<div class="form-group">
 								<input class="form-control" placeholder="Mật khẩu" name="password" type="password">
-								{{-- {{ showError($errors, 'password')}} --}}
+								{{ showError($errors, 'password')}}
 							</div>
 							<div class="checkbox">
 								<label>

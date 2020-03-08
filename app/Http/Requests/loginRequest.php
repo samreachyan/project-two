@@ -25,7 +25,7 @@ class loginRequest extends FormRequest
     {
         return [
             'email'=>'required|email|min:10',
-            'password'=>'requied|min:5'
+            'password'=>'required|min:5'
         ];
     }
     public function messages(){
