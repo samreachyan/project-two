@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vietpro Mobile Shop - Administrator</title>
+<title>Shop - Administrator</title>
 
 <base href=" {{ asset("backend") }}/">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -27,12 +27,15 @@
 				<div class="panel-body">
 					<div class="alert alert-danger">Tài khoản không hợp lệ !</div>
 					<form role="form" method="post">
+						@csrf
 						<fieldset>
 							<div class="form-group">
-								<input class="form-control" placeholder="E-mail" name="mail" type="email" autofocus>
+							<input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="" value="{{ old('email') }}">
+								{{ showError($errors, 'email')}}
 							</div>
 							<div class="form-group">
-								<input class="form-control" placeholder="Mật khẩu" name="pass" type="password" value="">
+								<input class="form-control" placeholder="Mật khẩu" name="password" type="password">
+								{{ showError($errors, 'password')}}
 							</div>
 							<div class="checkbox">
 								<label>

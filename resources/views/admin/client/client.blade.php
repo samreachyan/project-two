@@ -1,22 +1,23 @@
 @extends('admin.master.master')
-@section('title', "Admin - User")
-@section('user','class=active')
+@section('title', "Admin - Client
+")
+@section('client','class=active')
 
 @section('content')
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="#"><svg class="glyph stroked home">
+            <li><a href="/admin"><svg class="glyph stroked home">
                         <use xlink:href="#stroked-home"></use>
                     </svg></a></li>
-            <li class="active">Danh sách thành viên</li>
+            <li class="active">Danh sách khách hàng</li>
         </ol>
     </div>
     <!--/.row-->
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Danh sách thành viên</h1>
+            <h1 class="page-header">Danh sách khách hàng tải khoàn</h1>
         </div>
     </div>
     <!--/.row-->
@@ -32,9 +33,8 @@
                             <div class="alert bg-success" role="alert">
                                 <svg class="glyph stroked checkmark">
                                     <use xlink:href="#stroked-checkmark"></use>
-                                </svg>Đã thêm thành công<a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                                </svg>Đã sửa thành công<a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
                             </div>
-                            <a href="/admin/user/add" class="btn btn-primary">Thêm Thành viên</a>
                             <table class="table table-bordered" style="margin-top:20px;">
 
                                 <thead>
@@ -44,7 +44,6 @@
                                         <th>Full</th>
                                         <th>Address</th>
                                         <th>Phone</th>
-                                        <th>Level</th>
                                         <th width='18%'>Tùy chọn</th>
                                     </tr>
                                 </thead>
@@ -56,9 +55,8 @@
                                         <td>Nguyễn thế phúc</td>
                                         <td>Thường tín</td>
                                         <td>0356653300</td>
-                                        <td>1</td>
                                         <td>
-                                            <a href="/admin/user/edit" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
+                                            <a href="/admin/client/edit" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
                                             <a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                         </td>
                                     </tr>
@@ -68,9 +66,8 @@
                                         <td>Nguyễn thế phúc</td>
                                         <td>Thường tín</td>
                                         <td>0356653300</td>
-                                        <td>1</td>
                                         <td>
-                                            <a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
+                                            <a href="/admim/client/edit" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
                                             <a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                         </td>
                                     </tr>

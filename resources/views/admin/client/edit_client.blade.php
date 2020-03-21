@@ -1,5 +1,5 @@
 @extends('admin.master.master')
-@section('title', "Admin - User")
+@section('title', "Admin - Client")
 @section('user','class=active')
 
 @section('content')
@@ -24,26 +24,21 @@
 						<div class="col-md-8">
 							<div class="alert alert-danger">Email đã tồn tại, Mật khẩu không khớp !</div>
 						<form role="form" method="post">
-							@csrf
 							<div class="form-group">
 								<label>Họ & Tên</label>
 								<input type="text" name="user_full" required class="form-control" value="Nguyễn Văn A" placeholder="">
-								{{ showError($errors, 'user_full')}}
 							</div>
 							<div class="form-group">
 								<label>Email</label>
 								<input type="text" name="user_mail" required value="nguyenvana@gmail.com" class="form-control">
-								{{ showError($errors, 'user_mail')}}
 							</div>                       
 							<div class="form-group">
 								<label>Mật khẩu</label>
-								<input type="password" name="user_pass"  class="form-control">
-								{{ showError($errors, 'user_pass')}}
+								<input type="password" name="user_pass" required  class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Nhập lại mật khẩu</label>
-								<input type="password" name="user_re_pass" class="form-control">
-								{{ showError($errors, 'user_re_pass')}}
+								<input type="password" name="user_re_pass" required  class="form-control">
 							</div>
 							<div class="form-group">
 								<label>Quyền</label>
