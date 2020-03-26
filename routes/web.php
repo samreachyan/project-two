@@ -23,13 +23,16 @@ Route::post('/login', 'Admin\LoginController@postLogin');
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', 'Admin\IndexController@getIndex');
 
-    
     Route::group(['prefix' => 'category'], function () {
         Route::get('/', 'Admin\CategoryController@getCategory');
         Route::post('/', 'Admin\CategoryController@postCategory');
         Route::get('/delete/{id}', 'Admin\CategoryController@getDelete');
         Route::get('/edit/{id}', 'Admin\CategoryController@editCategory');
         Route::post('/edit/{id}', 'Admin\CategoryController@PosteditCategory');
+    });
+
+    Route::group(['prefix' => 'comment'], function () {
+        Route::get('/', 'Admin\CommentController@getCommnet');
     });
 
     Route::group(['prefix' => 'product'], function () {
@@ -44,7 +47,14 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/client', 'Admin\ClientController@getClient');
     Route::get('/client/edit', 'Admin\ClientController@getEditClient');
 
-    Route::get('/order', 'Admin\OrderController@getOrder');
+    
+    Route::group(['prefix' => 'order'], function () {
+        Route::get('/', 'Admin\OrderController@getOrder');
+        Route::get('/proceed', 'Admin\OrderController@getProceed');
+        Route::get('/proceed/{id}', 'Admin\OrderController@getProceedDetail');
+        Route::get('/detail/{id}', 'Admin\OrderController@getDetailProduct');
+        Route::get('/comfirme/{id}', 'Admin\OrderController@getComfirme');
+    });
 
     
     Route::group(['prefix' => 'user'], function () {

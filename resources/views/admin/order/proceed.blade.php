@@ -6,7 +6,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="#"><svg class="glyph stroked home">
+            <li><a href="/admin"><svg class="glyph stroked home">
                         <use xlink:href="#stroked-home"></use>
                     </svg></a></li>
             <li class="active">Đơn hàng</li>
@@ -21,7 +21,15 @@
                 <div class="panel-body">
                     <div class="bootstrap-table">
                         <div class="table-responsive">
-                            <a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-gift"></span>Đơn Chưa xử lý</a>
+                            <a href="/admin/order" class="btn btn-warning"><span class="glyphicon glyphicon-gift"></span>Đơn Chưa xử lý</a>
+                            <br>
+                            @if (session('thongbao'))
+								<div class="alert bg-success" role="alert">
+									<svg class="glyph stroked checkmark">
+										<use xlink:href="#stroked-checkmark"></use>
+									</svg>{{ session('thongbao') }}<a href="/admin/product" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+								</div>
+							@endif
                             <table class="table table-bordered" style="margin-top:20px;">				
                                 <thead>
                                     <tr class="bg-primary">
@@ -31,25 +39,23 @@
                                         <th>Sđt</th>
                                         <th>Địa chỉ</th>
                                         <th>Thời gian</th>
+                                        <th>Detail Product</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($order as $item)
                                     <tr>
-                                        <td>2</td>
-                                        <td>Nguyễn văn An</td>
-                                        <td>Lu@gmail.com</td>
-                                        <td>015232412</td>
-                                        <td>Bắc ninh</td>
-                                        <td>2018-12-06 12:17:17</td>
+                                        <td>{{ $item->id }}</td>
+                                        <td>{{ $item->full }}</td>
+                                        <td>{{ $item->email }}</td>
+                                        <td>{{ $item->phone }}</td>
+                                        <td>{{ $item->address }}</td>
+                                        <td>{{ $item->updated_at }}</td>     
+                                        <td>
+                                            <a href="/admin/order/detail/{{ $item->id}}" class="btn btn-danger"> Detail</a>
+                                        </td>                                                                        
                                     </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Nguyễn thế phúc</td>
-                                        <td>admin@gmail.com</td>
-                                        <td>0906013526</td>
-                                        <td>Thường tín , hà nội</td>
-                                        <td>2018-12-06 02:05:30</td>                                                                                
-                                    </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

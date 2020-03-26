@@ -13,9 +13,9 @@ class Product extends Model
         return $this->hasMany('App\Model\Product_Order', 'product_id', 'id');
     }
 
-    public function product_comment()
+    public function comments()
     {
-        return $this->hasMany('App\Model\Product_Comment', 'product_id', 'id');
+        return $this->hasMany('App\Product_Comment');
     }
 
     public function product_category()

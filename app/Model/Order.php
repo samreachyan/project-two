@@ -10,6 +10,6 @@ class Order extends Model
 
     public function prd_order()
     {
-        return $this->hasMany('App\Model\Product_Order', 'product_id','id');
+        return $this->hasMany('App\Model\Product_Order', 'order_id','id');
     }
 }
