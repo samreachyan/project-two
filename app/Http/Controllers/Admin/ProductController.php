@@ -4,14 +4,26 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Model\Product;
 
 class ProductController extends Controller
 {
     public function getProduct () {
-        return view('admin.product.product');
+        $data['product'] = Product::paginate(5);
+        return view('admin.product.product', $data);
     }
     public function getAddProduct () {
         return view('admin.product.add_product');
+    }
+    public function StatusUpdate($id){
+        $prd = Product::find($id);
+        if ($prd->state == 1) {
+            $prd->state = 0;
+        } else {
+            $prd->state = 1;
+        }
+        $prd->save();
+        return redirect()->back()->with('thongbao', 'You changed status product id '.$id);
     }
     public function postAddProduct(request $request){
         $request->validate([

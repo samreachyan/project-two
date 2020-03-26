@@ -24,26 +24,30 @@ class EditUserRequest extends FormRequest
     public function rules()
     {
         return [
-           'email'=>'required|email|unique:users,email,'.$this->id.',id',
+            //unique:table_db_name
+           'user_email'=>'required|email|unique:user,email,'.$this->id.',id',
            'password'=>'required|min:5',
-           'full'=>'required|min:4',
-           'phone'=>'required|min:7,'.$this->id.',id',
-           'address'=>'required'
+           'new_password'=>'required|min:5',
+           'user_full'=>'required|min:4',
+           'user_phone'=>'required|min:7,'.$this->id.',id',
+           'user_address'=>'required'
         ];
     }
     public function messages()
     {
         return [
-            'email.required'=>'Email Không được để trống!',
-            'email.email'=>'Email Không đúng định dạng!',
-            'email.unique'=>'Email Đã tốn tại!',
+            'user_email.required'=>'Email Không được để trống!',
+            'user_email.email'=>'Email Không đúng định dạng!',
+            'user_email.unique'=>'Email Đã tốn tại!',
             'password.required'=>'Mật khẩu Không được để trống!',
             'password.min'=>'Mật khẩu không được nhỏ hơn 5 ký tự!',
-            'full.required'=>'Họ tên Không được để trống!',
-            'full.min'=>'Họ tên Không được nhỏ hơn 4 ký tự!',
-            'phone.required'=>'số điện thoại Không được để trống!',
-            'phone.min'=>'Số điện thoại Không được nhỏ hơn 7 ký tự!',
-            'address.required'=>'Address không được để trống!'
+            'new_password.required'=>'Mật khẩu Không được để trống!',
+            'new_password.min'=>'Mật khẩu không được nhỏ hơn 5 ký tự!',
+            'user_full.required'=>'Họ tên Không được để trống!',
+            'user_full.min'=>'Họ tên Không được nhỏ hơn 4 ký tự!',
+            'user_phone.required'=>'số điện thoại Không được để trống!',
+            'user_phone.min'=>'Số điện thoại Không được nhỏ hơn 7 ký tự!',
+            'user_address.required'=>'Address không được để trống!'
         ];
     }
 }

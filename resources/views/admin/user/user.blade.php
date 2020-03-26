@@ -6,7 +6,7 @@
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="#"><svg class="glyph stroked home">
+            <li><a href="/admin"><svg class="glyph stroked home">
                         <use xlink:href="#stroked-home"></use>
                     </svg></a></li>
             <li class="active">Danh sách thành viên</li>
@@ -29,11 +29,13 @@
                 <div class="panel-body">
                     <div class="bootstrap-table">
                         <div class="table-responsive">
+                            @if (session('thongbao'))
                             <div class="alert bg-success" role="alert">
                                 <svg class="glyph stroked checkmark">
                                     <use xlink:href="#stroked-checkmark"></use>
-                                </svg>Đã thêm thành công<a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                                </svg>{{ session('thongbao') }}<a href="#" class="pull-right"><span class="glyphicon glyphicon-remove"></span></a>
                             </div>
+                            @endif
                             <a href="/admin/user/add" class="btn btn-primary">Thêm Thành viên</a>
                             <table class="table table-bordered" style="margin-top:20px;">
 
@@ -49,42 +51,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                
+
+                                    @foreach ($user as $item)
                                     <tr>
-                                        <td>1</td>
-                                        <td>Admin@gmail.com</td>
-                                        <td>Nguyễn thế phúc</td>
-                                        <td>Thường tín</td>
-                                        <td>0356653300</td>
-                                        <td>1</td>
+                                        <td> {{ $item->id }} </td>
+                                        <td> {{ $item->email }} </td>
+                                        <td> {{ $item->full }} </td>
+                                        <td> {{ $item->address }} </td>
+                                        <td> {{ $item->phone }} </td>
+                                        <td> @if ($item->level == 1) <span class="badge badge-primary">admin</span> @else <span class="badge badge-info">member</span> @endif </td>
                                         <td>
-                                            <a href="/admin/user/edit" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-                                            <a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
+                                            <a href="/admin/user/edit/{{ $item->id }}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
+                                            <a href="/admin/user/delete/{{ $item->id }} " class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Admin@gmail.com</td>
-                                        <td>Nguyễn thế phúc</td>
-                                        <td>Thường tín</td>
-                                        <td>0356653300</td>
-                                        <td>1</td>
-                                        <td>
-                                            <a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-                                            <a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                             
                                 </tbody>
                             </table>
-                            <div align='right'>
-                                <ul class="pagination">
-                                    <li class="page-item"><a class="page-link" href="#">Trở lại</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">tiếp theo</a></li>
-                                </ul>
+                            <div>
+                                {{ $user->links() }}
                             </div>
                         </div>
                         <div class="clearfix"></div>

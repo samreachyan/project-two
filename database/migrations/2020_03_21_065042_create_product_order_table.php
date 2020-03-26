@@ -20,6 +20,8 @@ class CreateProductOrderTable extends Migration
             $table->decimal('price', 18, 0);
             $table->integer('quantity')->unsigned();
             $table->string('img');
+
+            // reference id to order table by order_id from product_order table
             $table->integer('order_id')->unsigned()->nullable();
             $table->foreign('order_id')->references('id')->on('order')->onDelete('cascade');
             $table->timestamps();
