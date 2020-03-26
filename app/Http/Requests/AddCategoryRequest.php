@@ -27,7 +27,7 @@ class AddCategoryRequest extends FormRequest
             'name'=>'required|unique:category'
         ];
     }
-    public function messages()
+    public function messages()    
     {
         return [
             'name.required'=>'Tên danh mục không được để trống',
