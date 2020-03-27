@@ -25,8 +25,10 @@
 			<div class="login-panel panel panel-default">
 				<div class="panel-heading">Login - Administrator</div>
 				<div class="panel-body">
-					<div class="alert alert-danger">Tài khoản không hợp lệ !</div>
-					<form role="form" method="post">
+					@if (session('thongbao'))
+						<div class="alert alert-danger">Tài khoản không hợp lệ!</div> 
+					@endif
+					<form role="form" action="/login" method="post">
 						@csrf
 						<fieldset>
 							<div class="form-group">

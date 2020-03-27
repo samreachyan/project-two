@@ -13,12 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'Admin\IndexController@getIndex');
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/login', 'Admin\LoginController@getLogin');
+Route::get('/login', 'Admin\LoginController@getLogin')->middleware('CheckLogout');
 Route::post('/login', 'Admin\LoginController@postLogin');
+Route::get('/logout', 'Admin\LoginController@getLogout');
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware'=>'CheckLogin'], function () {
     Route::get('/', 'Admin\IndexController@getIndex');
 
     Route::group(['prefix' => 'category'], function () {
