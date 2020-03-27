@@ -68,7 +68,7 @@
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->describe }}</td>
                                             <td>
-                                                <a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
+                                                <a href="/admin/comment/delete/{{$item->id}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach

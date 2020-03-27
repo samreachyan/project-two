@@ -15,48 +15,44 @@
     <div class="row">
         <div class="col-xs-6 col-md-12 col-lg-12">
             <div class="panel panel-primary">
-                <div class="panel-heading">Thêm sản phẩm</div>
                 <div class="panel-body">
-                    <form method="post">
-                        @csrf
+                    <form method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="row" style="margin-bottom:40px">
                          
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label>Danh mục</label>
                                         <select name="category" class="form-control">
-                                            <option value='1' selected>Nam</option>
-                                            <option value='3'>---|Áo khoác nam</option>
-                                            <option value='2'>Nữ</option>
-                                            <option value='4'>---|Áo khoác nữ</option>
+                                            {{ getCategory($category, 0, '', 0) }}
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Mã sản phẩm</label>
-                                        <input type="text" name="code" class="form-control">
+                                        <input type="text" name="code" class="form-control" value={{ old('code') }}>
                                         {{ showError($errors, 'code')}}
                                     </div>
                                     <div class="form-group">
                                         <label>Tên sản phẩm</label>
-                                        <input type="text" name="name" class="form-control">
+                                        <input type="text" name="name" class="form-control" value={{ old('name') }}>
                                         {{ showError($errors, 'name')}}
                                     </div>
                                     <div class="form-group">
                                         <label>Giá sản phẩm (Giá chung)</label>
-                                        <input type="number" name="price" class="form-control">
+                                        <input type="number" name="price" class="form-control" value={{ old('price') }}>
                                         {{ showError($errors, 'price')}}
                                     </div>
                                     <div class="form-group">
                                         <label>Sản phẩm có nổi bật</label>
                                         <select name="featured" class="form-control">
                                             <option value="0">Không</option>
-                                            <option value="1">Có</option>
+                                            <option selected value="1">Có</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Trạng thái</label>
                                         <select name="state" class="form-control">
-                                            <option value="1">Còn hàng</option>
+                                            <option selected value="1">Còn hàng</option>
                                             <option value="0">Hết hàng</option>
                                         </select>
                                     </div>
@@ -73,7 +69,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>Thông tin</label>
-                                        <textarea name="info" style="width: 100%;height: 100px;"></textarea>
+                                        <textarea name="info" style="width: 100%;height: 100px;" value={{ old('info') }}></textarea>
                                         {{ showError($errors, 'info')}}
                                     </div>
                                  </div>
@@ -83,7 +79,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Miêu tả</label>
-                                    <textarea id="editor" name="describe" style="width: 100%;height: 100px;"></textarea>
+                                    <textarea id="editor" name="describe" style="width: 100%;height: 100px;" value={{ old('describe') }}></textarea>
                                     {{ showError($errors, 'describe')}}
                                 </div>
                                 <button class="btn btn-success" name="add-product" type="submit">Thêm sản phẩm</button>
@@ -101,4 +97,30 @@
     <!--/.row-->
 </div>
 <!--end main-->
+@endsection
+
+
+@section('script')
+    @parent
+    <script>
+        function changeImg(input){
+               //Nếu như tồn thuộc tính file, đồng nghĩa người dùng đã chọn file mới
+               if(input.files && input.files[0]){
+                   var reader = new FileReader();
+                   //Sự kiện file đã được load vào website
+                   reader.onload = function(e){
+                       //Thay đổi đường dẫn ảnh
+                       $('#avatar').attr('src',e.target.result);
+                   }
+                   reader.readAsDataURL(input.files[0]);
+               }
+           }
+           $(document).ready(function() {
+               $('#avatar').click(function(){
+                   $('#img').click();
+               });
+           });
+   
+       </script>
+   
 @endsection

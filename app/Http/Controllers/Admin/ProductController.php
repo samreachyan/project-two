@@ -4,16 +4,22 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Model\Product;
+use App\Model\{Product, Category};
+use App\Http\Requests\{AddProductRequest, EditProductRequest};
+use Illuminate\Support\Str;
+use Carbon\Carbon;
+
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
     public function getProduct () {
-        $data['product'] = Product::paginate(5);
+        $data['product'] = Product::orderBy('id','desc')->paginate(5);
         return view('admin.product.product', $data);
     }
     public function getAddProduct () {
-        return view('admin.product.add_product');
+        $data['category'] = Category::all()->toArray();
+        return view('admin.product.add_product', $data);
     }
     public function StatusUpdate($id){
         $prd = Product::find($id);
@@ -25,29 +31,74 @@ class ProductController extends Controller
         $prd->save();
         return redirect()->back()->with('thongbao', 'You changed status product id '.$id);
     }
-    public function postAddProduct(request $request){
-        $request->validate([
-            'code'=>'required|min:3',
-            'name'=>'required|min:3',
-            'price'=>'required|numeric',
-            'info'=>'required|min:10',
-            'describe'=>'required|min:10',
-            'img'=>'image'
-        ],[
-            'code.required'=>'Không được để trống Mã sản phẩm',
-            'code.min'=>'Mã Sản phâmr không được nhỏ hơn 3 ký tự',
-            'name.required'=>'Không được để trống Tên sản phẩm',
-            'name.min'=>'Tên sản phẩm không được nhỏ hơn 3 ký tự',
-            'price.required'=>'Không được để trống Giá sản phẩm',
-            'price.numeric'=>'Giá sản phẩm không đúng định dạng',
-            'info.required'=> 'Không được để trống thong tin sản phẩm',
-            'info.min'=> 'Thoong tin sản phẩm không được nhỏ hơn 10 ký tự',
-            'describe.required' => 'Không được để trống mo ta sản phẩm',
-            'describe.min'=> 'Describe sản phẩm không được nhỏ hơn 10 ký tự',
-            'img.image'=>' Ảnh sản phẩm không đúng định dạng'
-        ]);
+
+    public function postAddProduct(AddProductRequest $request){
+        $now = Carbon::now()->format('d-m-Y');
+        // echo $now;
+        // dd($request->all());
+        $prd = new Product;
+        $prd->code = $request->code;
+        $prd->category_id = $request->category;
+        $prd->name = $request->name;
+        $prd->price = $request->price;
+        $prd->state = $request->state;
+        $prd->featured = $request->featured;
+        $prd->info = $request->info;
+        $prd->describe = $request->describe;
+        $prd->slug = Str::slug($request->name, '-');
+
+        if ($request->hasFile('img')) {
+            $file = $request->img;
+            $fileName = Str::slug($request->name,"-").'-'.$now.'.'.$file->getClientOriginalExtension();
+            $file->move('backend/img/', $fileName);
+            $prd->img = $fileName;
+        } else {
+            $prd->img = 'no-img.jpg';
+        }
+        $prd->save();
+
+        return redirect('/admin/product')->with('thongbao', 'You add new product successfully');
     }
-    public function getEditProduct () {
-        return view('admin.product.edit_product');
+
+    public function getEditProduct ($id) {
+        $data['category']= Category::all()->toarray();
+        $data['product'] = Product::find($id);
+        // dd($data);
+        return view('admin.product.edit_product', $data);
+    }
+    public function postEditProduct ($id, EditProductRequest $request){
+        // dd($request->all());
+
+        $prd = Product::find($id);
+        $prd->code = $request->code;
+        $prd->category_id = $request->category;
+        $prd->name = $request->name;
+        $prd->price = $request->price;
+        $prd->state = $request->state;
+        $prd->featured = $request->featured;
+        $prd->info = $request->info;
+        $prd->describe = $request->describe;
+        $prd->slug = Str::slug($request->name, '-');
+
+        if ($request->hasFile('img')) {
+            if ($prd->img != "no-img.jpg"){
+                // delete old img from workspace
+                unlink('backend/img/'.$prd->img);
+            }
+
+            $file = $request->img;
+            $fileName = Str::slug($request->name,"-").'-'.$now.'.'.$file->getClientOriginalExtension();
+            $file->move('backend/img/', $fileName);
+            $prd->img = $fileName;
+        }
+
+        $prd->save();
+        
+        return redirect('/admin/product')->with('thongbao', 'You edited product successfully');
+    }
+
+    public function deleteProduct ($id){
+        Product::destroy($id);
+        return redirect('/admin/product')->with('thongbao', 'You deleted a product id '.$id);
     }
 }

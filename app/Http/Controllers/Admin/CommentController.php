@@ -14,4 +14,8 @@ class CommentController extends Controller
         $data['comment'] = Product_Comment::paginate(15);
         return view('admin.comment.comment', $data);
     }
+    public function deleteComment($id){
+        Product_Comment::destroy($id);
+        return redirect()->back()->with('thongbao', 'You deleted comment');
+    }
 }

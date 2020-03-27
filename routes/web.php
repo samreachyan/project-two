@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.admin');
-});
+Route::get('/', 'Admin\IndexController@getIndex');
 
 Route::get('/login', 'Admin\LoginController@getLogin');
 Route::post('/login', 'Admin\LoginController@postLogin');
@@ -33,13 +31,16 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'comment'], function () {
         Route::get('/', 'Admin\CommentController@getCommnet');
+        Route::get('/delete/{id}', 'Admin\CommentController@deleteComment');
     });
 
     Route::group(['prefix' => 'product'], function () {
         Route::get('/', 'Admin\ProductController@getProduct');
         Route::get('/add', 'Admin\ProductController@getAddProduct');
         Route::post('/add', 'Admin\ProductController@postAddProduct');
-        Route::get('/edit', 'Admin\ProductController@getEditProduct');
+        Route::get('/edit/{id}', 'Admin\ProductController@getEditProduct');
+        Route::post('/edit/{id}', 'Admin\ProductController@postEditProduct');
+        Route::get('/delete/{id}', 'Admin\ProductController@deleteProduct');
 
         Route::get('/status-update/{id}', 'Admin\ProductController@StatusUpdate');
     });
