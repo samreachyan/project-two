@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/login', 'Admin\LoginController@getLogin')->middleware('CheckLogout');
 Route::post('/login', 'Admin\LoginController@postLogin');
@@ -70,4 +67,10 @@ Route::group(['prefix' => 'admin', 'middleware'=>'CheckLogin'], function () {
         Route::get('/delete/{id}', 'Admin\UserController@deleteUser');
     });
 
+});
+
+
+Route::group(['prefix' => '/'], function () {
+    Route::get('/', 'Shopping\IndexController@getIndex');
+    Route::get('index.html', 'Shopping\IndexController@getIndex');
 });
