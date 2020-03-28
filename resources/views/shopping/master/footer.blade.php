@@ -74,47 +74,34 @@
                         <div class="footer-logo">
                             <img src="images/menu/logo/1.jpg" alt="Footer Logo">
                             <p class="info">
-                                We are a team of designers and developers that create high quality HTML Template & Woocommerce, Shopify Theme.
+                                THƯƠNG HIỆU THỜI TRANG VIỆT NAM
                             </p>
                         </div>
                         <ul class="des">
                             <li>
-                                <span>Address: </span>
-                                6688Princess Road, London, Greater London BAS 23JK, UK
+                                <span>Address : </span>
+                                103 đường Yersin (Số cũ là: 148), P. Phú Cường, Tp. Thủ Dầu Một, Bình Dương, Vietnam.
                             </li>
                             <li>
                                 <span>Phone: </span>
-                                <a href="#">(+123) 123 321 345</a>
+                                <a href="#">038 612 68 62</a>
                             </li>
                             <li>
                                 <span>Email: </span>
-                                <a href="mailto://info@yourdomain.com">info@yourdomain.com</a>
+                                <a href="mailto://samreachyan@gmail.com">samreachyan@gmail.com</a>
                             </li>
                         </ul>
                     </div>
                     <!-- Footer Logo Area End Here -->
                     <!-- Begin Footer Block Area -->
-                    <div class="col-lg-2 col-md-3 col-sm-6">
-                        <div class="footer-block">
-                            <h3 class="footer-block-title">Product</h3>
-                            <ul>
-                                <li><a href="#">Prices drop</a></li>
-                                <li><a href="#">New products</a></li>
-                                <li><a href="#">Best sales</a></li>
-                                <li><a href="#">Contact us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Footer Block Area End Here -->
-                    <!-- Begin Footer Block Area -->
-                    <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="footer-block">
                             <h3 class="footer-block-title">Our company</h3>
                             <ul>
-                                <li><a href="#">Delivery</a></li>
-                                <li><a href="#">Legal Notice</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="/">Delivery</a></li>
+                                <li><a href="/">Legal Notice</a></li>
+                                <li><a href="/about-us.html">About us</a></li>
+                                <li><a href="/contact.html">Contact us</a></li>
                             </ul>
                         </div>
                     </div>
@@ -124,34 +111,24 @@
                         <div class="footer-block">
                             <h3 class="footer-block-title">Follow Us</h3>
                             <ul class="social-link">
-                                <li class="twitter">
-                                    <a href="https://twitter.com/" data-toggle="tooltip" target="_blank" title="Twitter">
-                                        <i class="fa fa-twitter"></i>
+                                <li class="facebook">
+                                    <a href="https://www.facebook.com/samreachcodes" data-toggle="tooltip" target="_blank" title="Facebook">
+                                        <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>
-                                <li class="rss">
-                                    <a href="https://rss.com/" data-toggle="tooltip" target="_blank" title="RSS">
-                                        <i class="fa fa-rss"></i>
+                                <li class="instagram">
+                                    <a href="https://www.instagram.com/yansamreach" data-toggle="tooltip" target="_blank" title="Instagram">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="youtube">
+                                    <a href="https://www.youtube.com/channel/UCJeykjBZfk4czEUxDBwyanQ?view_as=subscriber" data-toggle="tooltip" target="_blank" title="Youtube">
+                                        <i class="fa fa-youtube"></i>
                                     </a>
                                 </li>
                                 <li class="google-plus">
                                     <a href="https://www.plus.google.com/discover" data-toggle="tooltip" target="_blank" title="Google Plus">
                                         <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                                <li class="facebook">
-                                    <a href="https://www.facebook.com/" data-toggle="tooltip" target="_blank" title="Facebook">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li class="youtube">
-                                    <a href="https://www.youtube.com/" data-toggle="tooltip" target="_blank" title="Youtube">
-                                        <i class="fa fa-youtube"></i>
-                                    </a>
-                                </li>
-                                <li class="instagram">
-                                    <a href="https://www.instagram.com/" data-toggle="tooltip" target="_blank" title="Instagram">
-                                        <i class="fa fa-instagram"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -181,31 +158,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <!-- Begin Footer Links Area -->
-                    <div class="footer-links">
-                        <ul>
-                            <li><a href="#">Online Shopping</a></li>
-                            <li><a href="#">Promotions</a></li>
-                            <li><a href="#">My Orders</a></li>
-                            <li><a href="#">Help</a></li>
-                            <li><a href="#">Customer Service</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Most Populars</a></li>
-                            <li><a href="#">New Arrivals</a></li>
-                            <li><a href="#">Special Products</a></li>
-                            <li><a href="#">Manufacturers</a></li>
-                            <li><a href="#">Our Stores</a></li>
-                            <li><a href="#">Shipping</a></li>
-                            <li><a href="#">Payments</a></li>
-                            <li><a href="#">Warantee</a></li>
-                            <li><a href="#">Refunds</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Discount</a></li>
-                            <li><a href="#">Refunds</a></li>
-                            <li><a href="#">Policy Shipping</a></li>
-                        </ul>
-                    </div>
-                    <!-- Footer Links Area End Here -->
+                   
                     <!-- Begin Footer Payment Area -->
                     <div class="copyright text-center">
                         <a href="#">
@@ -215,7 +168,9 @@
                     <!-- Footer Payment Area End Here -->
                     <!-- Begin Copyright Area -->
                     <div class="copyright text-center pt-25">
-                        <span><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></span>
+                        <span>Made by <a target="_blank" href="https://www.facebook.com/yan.samreach"><svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
+</svg> Samreach</a></span>
                     </div>
                     <!-- Copyright Area End Here -->
                 </div>

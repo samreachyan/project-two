@@ -1,6 +1,6 @@
 @extends('shopping.master.master')
 
-@section('title', 'Home - Digital Products Store eCommerce')
+@section('title', 'Home - Man Woman Clothes')
 
 @section('content')
     @include('shopping.master.slider')

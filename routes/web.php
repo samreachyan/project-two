@@ -73,4 +73,23 @@ Route::group(['prefix' => 'admin', 'middleware'=>'CheckLogin'], function () {
 Route::group(['prefix' => '/'], function () {
     Route::get('/', 'Shopping\IndexController@getIndex');
     Route::get('index.html', 'Shopping\IndexController@getIndex');
+
+    Route::get('/about-us.html', 'Shopping\IndexController@getAboutUs');
+    Route::get('/faq.html', 'Shopping\IndexController@getFaq');
+    Route::get('/404.html', 'Shopping\IndexController@get404');
+
+    Route::get('/contact.html', 'Shopping\ContactController@getContact');
+   
+    Route::get('/cart.html', 'Shopping\CartController@getCart');
+
+    Route::get('/checkout.html', 'Shopping\CheckoutController@getCheckout');
+
+    Route::get('/compare.html', 'Shopping\CompareController@getCompare');
+
+    Route::get('/wishlist.html', 'Shopping\WishlistController@getWishlist');
+
+    Route::get('/login-register.html', 'Shopping\LoginRegisterController@getLoginRegister');
+
+    Route::get('/product', 'Shopping\ProductController@getProduct');
+    Route::get('/product-detail', 'Shopping\ProductController@getProductDetail');
 });

@@ -8,7 +8,7 @@
                 <div class="col-lg-3 col-md-4">
                     <div class="header-top-left">
                         <ul class="phone-wrap">
-                            <li><span>Telephone Enquiry:</span><a href="/index.html">038 612 68 62</a></li>
+                            <li><span>Telephone Enquiry :</span><a href="/index.html"> 038 612 68 62</a></li>
                         </ul>
                     </div>
                 </div>
@@ -22,9 +22,9 @@
                                 <div class="ht-setting-trigger"><span>Setting</span></div>
                                 <div class="setting ht-setting">
                                     <ul class="ht-setting-list">
-                                        <li><a href="login-register.html">My Account</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="login-register.html">Sign In</a></li>
+                                        <li><a href="/login-register.html">My Account</a></li>
+                                        <li><a href="/checkout.html">Checkout</a></li>
+                                        <li><a href="/login-register.html">Sign In</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -32,7 +32,7 @@
                             <!-- Begin Currency Area -->
                             <li>
                                 <span class="currency-selector-wrapper">Currency :</span>
-                                <div class="ht-currency-trigger"><span>USD $</span></div>
+                                <div class="ht-currency-trigger"><span>VND đ</span></div>
                                 <div class="currency ht-currency">
                                     <ul class="ht-setting-list">
                                         <li class="active"><a href="#">VND đ</a></li>
@@ -45,12 +45,12 @@
                             <li>
                                 <span class="language-selector-wrapper">Language :</span>
                                 <div class="ht-language-trigger"><span>English</span></div>
-                                <div class="language ht-language">
+                                {{-- <div class="language ht-language">
                                     <ul class="ht-setting-list">
                                         <li class="active"><a href="#"><img src="images/menu/flag-icon/1.jpg" alt="">English</a></li>
                                         <li><a href="#"><img src="images/menu/flag-icon/2.jpg" alt="">Français</a></li>
                                     </ul>
-                                </div>
+                                </div> --}}
                             </li>
                             <!-- Language Area End Here -->
                         </ul>
@@ -159,7 +159,7 @@
                         <ul class="hm-menu">
                             <!-- Begin Header Middle Wishlist Area -->
                             <li class="hm-wishlist">
-                                <a href="wishlist.html">
+                                <a href="/wishlist.html">
                                     <span class="cart-item-count wishlist-item-count">0</span>
                                     <i class="fa fa-heart-o"></i>
                                 </a>
@@ -203,10 +203,10 @@
                                     </ul>
                                     <p class="minicart-total">SUBTOTAL: <span>£80.00</span></p>
                                     <div class="minicart-button">
-                                        <a href="shopping-cart.html" class="li-button li-button-fullwidth li-button-dark">
+                                        <a href="/cart.html" class="li-button li-button-fullwidth li-button-dark">
                                             <span>View Full Cart</span>
                                         </a>
-                                        <a href="checkout.html" class="li-button li-button-fullwidth">
+                                        <a href="/checkout.html" class="li-button li-button-fullwidth">
                                             <span>Checkout</span>
                                         </a>
                                     </div>
@@ -231,10 +231,10 @@
                     <div class="hb-menu">
                         <nav>
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li class="dropdown-holder"><a href="blog-left-sidebar.html">Blog</a>
+                                <li><a href="/index.html">Home</a></li>
+                                <li class="dropdown-holder"><a href="blog-left-sidebar.html">Shop Category</a>
                                     <ul class="hb-dropdown">
-                                        <li class="sub-dropdown-holder"><a href="blog-left-sidebar.html">Blog Grid View</a>
+                                        <li class="sub-dropdown-holder"><a href="blog-left-sidebar.html">Ao Nam</a>
                                             <ul class="hb-dropdown hb-sub-dropdown">
                                                 <li><a href="blog-2-column.html">Blog 2 Column</a></li>
                                                 <li><a href="blog-3-column.html">Blog 3 Column</a></li>
@@ -242,32 +242,24 @@
                                                 <li><a href="blog-right-sidebar.html">Grid Right Sidebar</a></li>
                                             </ul>
                                         </li>
-                                        <li class="sub-dropdown-holder"><a href="blog-list-left-sidebar.html">Blog List View</a>
+                                        <li class="sub-dropdown-holder"><a href="blog-list-left-sidebar.html">Ao Nu</a>
                                             <ul class="hb-dropdown hb-sub-dropdown">
                                                 <li><a href="blog-list.html">Blog List</a></li>
                                                 <li><a href="blog-list-left-sidebar.html">List Left Sidebar</a></li>
                                                 <li><a href="blog-list-right-sidebar.html">List Right Sidebar</a></li>
                                             </ul>
                                         </li>
-                                        <li class="sub-dropdown-holder"><a href="blog-details-left-sidebar.html">Blog Details</a>
+                                        <li class="sub-dropdown-holder"><a href="blog-details-left-sidebar.html">Ao Khoac</a>
                                             <ul class="hb-dropdown hb-sub-dropdown">
                                                 <li><a href="blog-details-left-sidebar.html">Left Sidebar</a></li>
                                                 <li><a href="blog-details-right-sidebar.html">Right Sidebar</a></li>
                                             </ul>
                                         </li>
-                                        <li class="sub-dropdown-holder"><a href="blog-gallery-format.html">Blog Format</a>
-                                            <ul class="hb-dropdown hb-sub-dropdown">
-                                                <li><a href="blog-audio-format.html">Blog Audio Format</a></li>
-                                                <li><a href="blog-video-format.html">Blog Video Format</a></li>
-                                                <li><a href="blog-gallery-format.html">Blog Gallery Format</a></li>
-                                            </ul>
-                                        </li>
                                     </ul>
                                 </li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="shop-left-sidebar.html">Smartwatch</a></li>
-                                <li><a href="shop-left-sidebar.html">Accessories</a></li>
+                                <li><a href="/about-us.html">About Us</a></li>
+                                <li><a href="/contact.html">Contact</a></li>
+
                             </ul>
                         </nav>
                     </div>
