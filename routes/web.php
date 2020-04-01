@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\Product as ProductResource;
+use App\Model\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/products', function () {
+    return new ProductResource(Product::first());
+});
 
 
 Route::get('/login', 'Admin\LoginController@getLogin')->middleware('CheckLogout');
@@ -73,7 +78,6 @@ Route::group(['prefix' => 'admin', 'middleware'=>'CheckLogin'], function () {
 Route::group(['prefix' => '/'], function () {
     Route::get('/', 'Shopping\IndexController@getIndex');
     Route::get('index.html', 'Shopping\IndexController@getIndex');
-
     Route::get('/about-us.html', 'Shopping\IndexController@getAboutUs');
     Route::get('/faq.html', 'Shopping\IndexController@getFaq');
     Route::get('/404.html', 'Shopping\IndexController@get404');
@@ -90,6 +94,6 @@ Route::group(['prefix' => '/'], function () {
 
     Route::get('/login-register.html', 'Shopping\LoginRegisterController@getLoginRegister');
 
-    Route::get('/product', 'Shopping\ProductController@getProduct');
-    Route::get('/product-detail', 'Shopping\ProductController@getProductDetail');
+    Route::get('/product/', 'Shopping\ProductController@getProduct');
+    Route::get('/product-detail/{id}', 'Shopping\ProductController@getProductDetail');
 });
