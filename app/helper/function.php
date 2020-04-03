@@ -8,6 +8,14 @@ function showError($errors,$nameInput){
     }
 }
 
+function showErrors($errors,$nameInput){
+    if($errors->has($nameInput)) {
+        echo '<div class="alert alert-danger" role="alert"><strong>';
+        echo $errors->first($nameInput);
+        echo '</strong></div>';
+    }
+}
+
 function showErrorCategory($errors, $name){
     if ($errors->has($name)) {
         echo '<div class="alert bg-danger" role="alert">';

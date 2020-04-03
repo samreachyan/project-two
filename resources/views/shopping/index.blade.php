@@ -52,7 +52,7 @@
                                                 </div>
                                                 <h4><a class="product_name" href="/product-detail/{{$item->id}}">{{ $item->name }}</a></h4>
                                                 <div class="price-box">
-                                                    <span class="new-price">$46.80</span>
+                                                    <span class="new-price">{{ number_format($item->price, 0, '', '.') }} VND</span>
                                                 </div>
                                             </div>
                                             <div class="add-actions">
@@ -305,4 +305,21 @@
             </div>
         </div>
     </section> --}}
+@endsection
+
+@section('script')
+    @parent
+
+    <script>
+        function addCartQuick(id){
+            $.get("/cart/add/"+ id, function(data){
+                if( data == 'success'){
+                    console.log("add cart");
+                    location.reload();
+                } else {
+                    alert('Add to cart failed!!!');
+                }
+            });
+        }
+    </script>
 @endsection

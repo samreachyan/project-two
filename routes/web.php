@@ -85,6 +85,9 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/contact.html', 'Shopping\ContactController@getContact');
    
     Route::get('/cart.html', 'Shopping\CartController@getCart');
+    Route::get('/cart/add/{id}', 'Shopping\CartController@addCartQuick');
+    Route::get('/cart/update/{id}/{qty}', 'Shopping\CartController@updateCart');
+    Route::get('/cart/delete/{id}', 'Shopping\CartController@delCart');
 
     Route::get('/checkout.html', 'Shopping\CheckoutController@getCheckout');
 
@@ -92,8 +95,12 @@ Route::group(['prefix' => '/'], function () {
 
     Route::get('/wishlist.html', 'Shopping\WishlistController@getWishlist');
 
-    Route::get('/login-register.html', 'Shopping\LoginRegisterController@getLoginRegister');
+    Route::get('/my-account.html', 'Shopping\LoginRegisterController@getLoginRegister');
 
-    Route::get('/product/', 'Shopping\ProductController@getProduct');
+    Route::get('/login-register.html', 'Shopping\LoginRegisterController@getLoginRegister');
+    Route::post('/login-client', 'Shopping\LoginRegisterController@Login');
+    Route::post('/register-client', 'Shopping\LoginRegisterController@Register');
+
+    Route::get('/product', 'Shopping\ProductController@getProduct');
     Route::get('/product-detail/{id}', 'Shopping\ProductController@getProductDetail');
 });

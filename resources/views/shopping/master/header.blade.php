@@ -22,7 +22,7 @@
                                 <div class="ht-setting-trigger"><span>Setting</span></div>
                                 <div class="setting ht-setting">
                                     <ul class="ht-setting-list">
-                                        <li><a href="/login-register.html">My Account</a></li>
+                                        <li><a href="/my-account.html">My Account</a></li>
                                         <li><a href="/checkout.html">Checkout</a></li>
                                         <li><a href="/login-register.html">Sign In</a></li>
                                     </ul>
