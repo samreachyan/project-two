@@ -39,7 +39,6 @@
     <link rel="stylesheet" href="style.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
-    <!-- Modernizr js -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
     <body>

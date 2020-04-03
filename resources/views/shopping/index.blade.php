@@ -57,7 +57,7 @@
                                             </div>
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
-                                                    <li class="add-cart active"><a href="/cart/add/{{$item->id}}">Add to cart</a></li>
+                                                    <li class="add-cart active"><a onclick="return addCartQuick({{ $item->id }})" >Add to cart</a></li>
                                                     <li><a class="links-details" href="/wishlist/add{{$item->id}}"><i class="fa fa-heart-o"></i></a></li>
                                                     
                                                 </ul>
@@ -159,7 +159,7 @@
                                             </div>
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
-                                                    <li class="add-cart active"><a href="/cart/add/{{$item->id}}">Add to cart</a></li>
+                                                    <li class="add-cart active"><a onclick="return addCartQuick({{ $item->id }})">Add to cart</a></li>
                                                     <li><a class="links-details" href="/wishlist/add{{$item->id}}"><i class="fa fa-heart-o"></i></a></li>
                                                 </ul>
                                             </div>
@@ -314,7 +314,8 @@
         function addCartQuick(id){
             $.get("/cart/add/"+ id, function(data){
                 if( data == 'success'){
-                    console.log("add cart");
+                    // console.log("add cart");
+                    alert('Add to cart done!!!');
                     location.reload();
                 } else {
                     alert('Add to cart failed!!!');

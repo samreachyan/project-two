@@ -8,7 +8,7 @@
         <div class="container">
             <div class="breadcrumb-content">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/index.html">Home</a></li>
                     <li class="active">Contact</li>
                 </ul>
             </div>
@@ -22,20 +22,20 @@
                 <div class="col-lg-5 offset-lg-1 col-md-12 order-1 order-lg-2">
                     <div class="contact-page-side-content">
                         <h3 class="contact-page-title">Contact Us</h3>
-                        <p class="contact-page-message mb-25">Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram anteposuerit litterarum formas human.</p>
+                        <p class="contact-page-message mb-25">Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in most web projects.</p>
                         <div class="single-contact-block">
                             <h4><i class="fa fa-fax"></i> Address</h4>
-                            <p>123 Main Street, Anytown, CA 12345 – USA</p>
+                            <p>103 đường Yersin (Số cũ là: 148), P. Phú Cường, Tp. Thủ Dầu Một, Bình Dương, Vietnam.</p>
                         </div>
                         <div class="single-contact-block">
                             <h4><i class="fa fa-phone"></i> Phone</h4>
-                            <p>Mobile: (08) 123 456 789</p>
-                            <p>Hotline: 1009 678 456</p>
+                            <p>Mobile: (+84) 38612 68 62</p>
+                            <p>Hotline: 096 360 14 11</p>
                         </div>
                         <div class="single-contact-block last-child">
                             <h4><i class="fa fa-envelope-o"></i> Email</h4>
-                            <p>yourmail@domain.com</p>
-                            <p>support@hastech.company</p>
+                            <p>samreachyan@gmail.com</p>
+                            <p>info@domain.com</p>
                         </div>
                     </div>
                 </div>

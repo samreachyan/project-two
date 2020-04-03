@@ -165,43 +165,34 @@
                                 </a>
                             </li>
                             <!-- Header Middle Wishlist Area End Here -->
+                            
                             <!-- Begin Header Mini Cart Area -->
                             <li class="hm-minicart">
                                 <div class="hm-minicart-trigger">
                                     <span class="item-icon"></span>
-                                    <span class="item-text">£80.00
-                                        <span class="cart-item-count">2</span>
+                                    <span class="item-text">List
+                                        <span class="cart-item-count">{{ Cart::getTotalQuantity() }}</span>
                                     </span>
                                 </div>
                                 <span></span>
                                 <div class="minicart">
                                     <ul class="minicart-product-list">
-                                        <li>
-                                            <a href="single-product.html" class="minicart-product-image">
-                                                <img src="images/product/small-size/5.jpg" alt="cart products">
-                                            </a>
-                                            <div class="minicart-product-details">
-                                                <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                <span>£40 x 1</span>
-                                            </div>
-                                            <button class="close" title="Remove">
-                                                <i class="fa fa-close"></i>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <a href="single-product.html" class="minicart-product-image">
-                                                <img src="images/product/small-size/6.jpg" alt="cart products">
-                                            </a>
-                                            <div class="minicart-product-details">
-                                                <h6><a href="single-product.html">Aenean eu tristique</a></h6>
-                                                <span>£40 x 1</span>
-                                            </div>
-                                            <button class="close" title="Remove">
-                                                <i class="fa fa-close"></i>
-                                            </button>
-                                        </li>
+                                        @foreach (Cart::getContent() as $item)
+                                            <li>
+                                                <a href="single-product.html" class="minicart-product-image">
+                                                    <img style="width:48px" src="/backend/img/{{ $item->attributes->img }}" alt="cart products">
+                                                </a>
+                                                <div class="minicart-product-details">
+                                                    <h6><a href="single-product.html">{{ $item->name }}</a></h6>
+                                                    <span>{{ number_format($item->price, 0, '', '.') }} VND x {{ $item->quantity }}</span>
+                                                </div>
+                                                <button class="close" title="Remove">
+                                                    <i class="fa fa-close"></i>
+                                                </button>
+                                            </li>
+                                        @endforeach
                                     </ul>
-                                    <p class="minicart-total">SUBTOTAL: <span>£80.00</span></p>
+                                    {{-- <p class="minicart-total">SUBTOTAL: <span>{{ number_format($total , 0, '', '.') }} VND</span></p> --}}
                                     <div class="minicart-button">
                                         <a href="/cart.html" class="li-button li-button-fullwidth li-button-dark">
                                             <span>View Full Cart</span>
