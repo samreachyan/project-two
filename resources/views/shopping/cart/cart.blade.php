@@ -8,7 +8,7 @@
         <div class="container">
             <div class="breadcrumb-content">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/index.html">Home</a></li>
                     <li class="active">Shopping Cart</li>
                 </ul>
             </div>
@@ -20,7 +20,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <form action="#">
+                    {{-- <form action="/cart/update" method="POST">
+                        @csrf --}}
                         <div class="table-content table-responsive">
                             <table class="table">
                                 <thead>
@@ -41,12 +42,12 @@
                                             <td class="li-product-name"><a href="#">{{ $item->name }}</a></td>
                                             <td class="li-product-price"><span class="amount">{{ number_format($item->price, 0, '', '.') }} VND</span></td>
                                             <td class="quantity">
-                                                <label>Quantity</label>
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" onchange="return update_cart('{{$item->id}}', this.value)" value="{{ $item->quantity }}" type="text">
-                                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                                </div>
+                                                    <label>Quantity</label>
+                                                    <div class="cart-plus-minus">
+                                                        <input onchange="update_cart('{{ $item->id }}', this.value-{{ $item->quantity }})" class="cart-plus-minus" name="quantity" value="{{ $item->quantity }}" min="0" type="number">
+                                                        {{-- <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                                        <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div> --}}
+                                                    </div>
                                             </td>
                                             <td class="product-subtotal"><span class="amount">{{ number_format($item->price * $item->quantity, 0, '', '.') }} VND</span></td>
                                         </tr>
@@ -72,14 +73,14 @@
                                 <div class="cart-page-total">
                                     <h2>Cart totals</h2>
                                     <ul>
-                                        <li>Subtotal <span>$130.00</span></li>
-                                        <li>Total <span>$130.00</span></li>
+                                        {{-- <li>Transfer fee<span>20.000 VND</span></li> --}}
+                                        <li>Total <span>{{ number_format($total, 0, '', '.') }} VND</span></li>
                                     </ul>
-                                    <a href="#">Proceed to checkout</a>
+                                    <a href="/checkout.html">Proceed to checkout</a>
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    {{-- </form> --}}
                 </div>
             </div>
         </div>
@@ -93,10 +94,12 @@
 		// function update cart increase or decrease amount prd
 		function update_cart(id, qty){
 			$.get("/cart/update/"+id+"/"+qty, function(data){
+                console.log(data + "qty = "+qty + " - id =" + id);
 				if (data == "success"){
+                    console.log('workd');
 					location.reload();
 				} else {
-					alert('Connection failed!!');
+					alert('update cart failed!!');
 				}
 			});
 		}

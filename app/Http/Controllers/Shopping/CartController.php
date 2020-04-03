@@ -11,6 +11,12 @@ class CartController extends Controller
 {
     function getCart() {
         $data['cart'] = Cart::getContent();
+        $data['total'] = 0;
+        if (!Cart::isEmpty()){
+            foreach (Cart::getContent() as $item)
+                $data['total'] += $item->price * $item->quantity;
+        }
+        
         // dd($data);
         return view('shopping.cart.cart', $data);
     }
@@ -18,7 +24,7 @@ class CartController extends Controller
     function addCartQuick($id) {
         $prd = Product::find($id);
 
-        Cart::add([
+        Cart::add(array(
             'id' => $prd->id, 
             'name' => $prd->name, 
             'quantity' => '1', 
@@ -27,8 +33,8 @@ class CartController extends Controller
             'attributes' => array(
                 'img' => $prd->img,
             )
-        ]);
-        return redirect()->back();
+        ));
+        return 'success';
     }
 
     function delCart($id) {
@@ -37,7 +43,11 @@ class CartController extends Controller
     }
 
     function updateCart($id, $qty){
-        Cart::update($id, $qty);
+        // Cart::update($id, $qty);
+        // dd($qty);
+        Cart::update($id, array(
+            'quantity' => $qty,
+        ));
         return 'success';
     }
 

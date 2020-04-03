@@ -34,4 +34,8 @@ class LoginRegisterController extends Controller
         }
 
     }
+
+    function Account(){
+        return view('shopping.login-register.account');
+    }
 }

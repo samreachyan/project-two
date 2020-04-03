@@ -90,12 +90,14 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/cart/delete/{id}', 'Shopping\CartController@delCart');
 
     Route::get('/checkout.html', 'Shopping\CheckoutController@getCheckout');
+    Route::post('/checkout.html', 'Shopping\CheckoutController@postCheckout');
+
 
     Route::get('/compare.html', 'Shopping\CompareController@getCompare');
 
     Route::get('/wishlist.html', 'Shopping\WishlistController@getWishlist');
 
-    Route::get('/my-account.html', 'Shopping\LoginRegisterController@getLoginRegister');
+    Route::get('/my-account.html', 'Shopping\LoginRegisterController@Account');
 
     Route::get('/login-register.html', 'Shopping\LoginRegisterController@getLoginRegister');
     Route::post('/login-client', 'Shopping\LoginRegisterController@Login');
