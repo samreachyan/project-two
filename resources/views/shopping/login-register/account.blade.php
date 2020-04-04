@@ -13,5 +13,17 @@
         </div>
     </div>
 
+    <div class="page-section mb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <h1>My Account Page</h1>
+                    @if (session('thongbao'))
+                        <div class="alert alert-danger" role="alert"><strong>{{ session('thongbao') }} </strong></div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
     
 @endsection

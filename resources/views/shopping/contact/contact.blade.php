@@ -16,6 +16,7 @@
     </div>
     <!-- Li's Breadcrumb Area End Here -->     
     <!-- Begin Contact Main Page Area -->
+    
     <div class="contact-main-page mt-60 mb-40 mb-md-40 mb-sm-40 mb-xs-40">
         <div class="container">
             <div class="row">
@@ -41,9 +42,21 @@
                 </div>
                 <div class="col-lg-6 col-md-12 order-2 order-lg-1">
                     <div class="contact-form-content pt-sm-55 pt-xs-55">
+                        
+                        @if (session('thongbao'))
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+                                <div class="alert alert-danger">
+                                    {{ session('thongbao') }}
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+
                         <h3 class="contact-page-title">Tell Us Your Message</h3>
                         <div class="contact-form">
-                            <form  id="contact-form" action="http://demo.hasthemes.com/limupa-v3/limupa/mail.php" method="post">
+                            <form  id="contact-form" action="/contact.html" method="post">
+                                @csrf
                                 <div class="form-group">
                                     <label>Your Name <span class="required">*</span></label>
                                     <input type="text" name="customerName" id="customername" required>
@@ -71,4 +84,5 @@
             </div>
         </div>
     </div>
+
 @endsection

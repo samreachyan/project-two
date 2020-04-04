@@ -17,6 +17,9 @@
 <!-- Begin Login Content Area -->
 <div class="page-section mb-60">
     <div class="container">
+        @if (session('thongbao'))
+            <div class="alert alert-danger" role="alert"><strong>{{ session('thongbao') }} </strong></div>
+        @endif
         <div class="row">
             <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
                 <!-- Login Form s-->
