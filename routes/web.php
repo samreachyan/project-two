@@ -83,6 +83,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/404.html', 'Shopping\IndexController@get404');
 
     Route::get('/contact.html', 'Shopping\ContactController@getContact');
+    Route::post('/contact.html', 'Shopping\ContactController@postContact');
    
     Route::get('/cart.html', 'Shopping\CartController@getCart');
     Route::get('/cart/add/{id}', 'Shopping\CartController@addCartQuick');
