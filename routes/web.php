@@ -14,7 +14,7 @@ use App\Model\Product;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/products', function () {
+Route::get('/api/products', function () {
     return new ProductResource(Product::first());
 });
 
@@ -86,6 +86,7 @@ Route::group(['prefix' => '/'], function () {
     Route::post('/contact.html', 'Shopping\ContactController@postContact');
    
     Route::get('/cart.html', 'Shopping\CartController@getCart');
+    Route::post('/cart/add/{prd}', 'Shopping\CartController@addCart');
     Route::get('/cart/add/{id}', 'Shopping\CartController@addCartQuick');
     Route::get('/cart/update/{id}/{qty}', 'Shopping\CartController@updateCart');
     Route::get('/cart/delete/{id}', 'Shopping\CartController@delCart');
@@ -104,6 +105,10 @@ Route::group(['prefix' => '/'], function () {
     Route::post('/login-client', 'Shopping\LoginRegisterController@Login');
     Route::post('/register-client', 'Shopping\LoginRegisterController@Register');
 
+    Route::post('/search', 'Shopping\ProductController@search');
+
     Route::get('/product', 'Shopping\ProductController@getProduct');
     Route::get('/product-detail/{id}', 'Shopping\ProductController@getProductDetail');
+
+    Route::get('/category/{id}', 'Shopping\CategoryController@getCategory');
 });

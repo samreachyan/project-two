@@ -21,6 +21,23 @@ class CartController extends Controller
         return view('shopping.cart.cart', $data);
     }
 
+    function addCart(Request $r, $id) {
+        $prd = Product::find($id);
+
+        Cart::add(array(
+            'id' => $prd->id, 
+            'name' => $prd->name, 
+            'quantity' => $r->quantity, 
+            'price' => $prd->price,  
+            'img' => $prd->img,
+            'attributes' => array(
+                'img' => $prd->img,
+            )
+        ));
+
+        return redirect('/cart.html');
+    }
+
     function addCartQuick($id) {
         $prd = Product::find($id);
 

@@ -53,7 +53,7 @@ function showCategoryList($category,$parent,$chuoiTab) {
 function showCategory($category, $parent, $tab) {
     foreach($category as $key => $value) {
         if($value['parent'] == $parent){
-            echo '<option value="'.$key.'">'.$tab.$value['name'].'</option> ';
+            echo '<option value="'.$value['id'].'">'.$tab.$value['name'].'</option> ';
             showCategory($category, $value['id'], $tab.'-- ');
         }
     }
@@ -63,7 +63,7 @@ function CategoryCon($category, $con) {
     echo '<ul class="hb-dropdown hb-sub-dropdown">';
     foreach ($category as  $item) {
         if ($item->parent == $con){
-            echo '<li><a href="/category/'.$item->slug.'.html">'.$item->name.'</a></li>';
+            echo '<li><a href="/category/'.$item->id.'">'.$item->name.'</a></li>';
         }
     }
     echo '</ul>';
@@ -72,7 +72,7 @@ function CategoryCon($category, $con) {
 function CategoryParent($category, $parent) {
     foreach ($category as  $item) {
         if ($item->parent == $parent){
-            echo '<li class="sub-dropdown-holder"><a href="/category/'.$item->slug.'.html">'.$item->name.'</a>';
+            echo '<li class="sub-dropdown-holder"><a href="/category/'.$item->id.'">'.$item->name.'</a>';
             CategoryCon($category, $item->id);
             echo '</li>';
         }

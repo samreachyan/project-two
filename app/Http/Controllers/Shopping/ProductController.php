@@ -20,4 +20,19 @@ class ProductController extends Controller
         // dd($data);
         return view('shopping.product.product-detail', $data);
     }
+
+    function search (Request $r) { 
+        if ($r->categoryId != 0 && $r->search == null) // selected category
+            $data['product'] = Product::where('category_id', $r->categoryId)->paginate(12);
+        elseif ($r->categoryId == 0 && $r->search == null ) // All
+            $data['product'] = Product::orderBy('id', 'desc')->paginate(12);
+        elseif ($r->categoryId != 0 && $r->search != null) // selected category
+            $data['product'] = Product::where('name', 'LIKE', '%'.$r->search.'%')->where('category_id', $r->categoryId)->paginate(12);
+        else
+            $data['product'] = Product::where('name', 'LIKE', '%'.$r->search.'%')->paginate(12);
+        // dd($product->all());
+        if (!$data['product'])
+            return redirect('/404.html');
+        else return view('shopping.product.product', $data);
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Shopping;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\CheckoutRequest;
 use Cart;
 use App\Model\Order;
 use App\Model\Product_Order;
@@ -20,7 +21,7 @@ class CheckoutController extends Controller
         return view('shopping.checkout.checkout', $data);
     }
 
-    function postCheckout(Request $r){
+    function postCheckout(CheckoutRequest $r){
         // dd($r);
         $order = new Order();
         $order->full = $r->full_name;
