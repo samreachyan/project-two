@@ -72,7 +72,7 @@
                     <!-- Begin Footer Logo Area -->
                     <div class="col-lg-4 col-md-6">
                         <div class="footer-logo">
-                            <img src="images/menu/logo/1.jpg" alt="Footer Logo">
+                            <img src="/backend/img/logo/logo.png" alt="Footer Logo">
                             <p class="info">
                                 THƯƠNG HIỆU THỜI TRANG VIỆT NAM
                             </p>
@@ -168,9 +168,9 @@
                     <!-- Footer Payment Area End Here -->
                     <!-- Begin Copyright Area -->
                     <div class="copyright text-center pt-25">
-                        <span>Made by <a target="_blank" href="https://www.facebook.com/yan.samreach"><svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <span>Made with <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
   <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
-</svg> Samreach</a></span>
+</svg> by <a target="_blank" href="https://www.facebook.com/yan.samreach"> Samreach</a></span>
                     </div>
                     <!-- Copyright Area End Here -->
                 </div>

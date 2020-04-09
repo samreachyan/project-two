@@ -8,7 +8,7 @@
         <div class="breadcrumb-content">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li class="active">Shop 4 Column</li>
+                <li class="active">Product found</li>
             </ul>
         </div>
     </div>
@@ -19,15 +19,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <!-- Begin Li's Banner Area -->
-                <div class="single-banner shop-page-banner">
-                    <a href="#">
-                        <img src="images/bg-banner/2.jpg" alt="Li's Static Banner">
-                    </a>
-                </div>
-                <!-- Li's Banner Area End Here -->
-                <!-- shop-top-bar start -->
-                <div class="shop-top-bar mt-30">
+                <div class="shop-top-bar mt-10">
                     <div class="shop-bar-inner">
                         <div class="product-view-mode">
                             <!-- shop-item-filter-list start -->
@@ -70,7 +62,7 @@
                                             <!-- single-product-wrap start -->
                                             <div class="single-product-wrap">
                                                 <div class="product-image">
-                                                    <a href="single-product.html">
+                                                    <a href="/product-details/{{ $item->id }}"">
                                                         <img src="/backend/img/{{$item->img}}" alt="{{ $item->name }}">
                                                     </a>
                                                     <span class="sticker">New</span>
@@ -79,9 +71,9 @@
                                                     <div class="product_desc_info">
                                                         <div class="product-review">
                                                             <h5 class="manufacturer">
-                                                                <a href="product-details.html">{{ $item->product_category->name }}</a>
+                                                                <a href="/product-detail/{{ $item->id }}">{{ $item->product_category->name }}</a>
                                                             </h5>
-                                                            <div class="rating-box">
+                                                            {{-- <div class="rating-box">
                                                                 <ul class="rating">
                                                                     <li><i class="fa fa-star-o"></i></li>
                                                                     <li><i class="fa fa-star-o"></i></li>
@@ -89,7 +81,7 @@
                                                                     <li class="no-star"><i class="fa fa-star-o"></i></li>
                                                                     <li class="no-star"><i class="fa fa-star-o"></i></li>
                                                                 </ul>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                         <h4><a class="product_name" href="/product-detail/{{ $item->id }}">{{ $item->name }}</a></h4>
                                                         <div class="price-box">

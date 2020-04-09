@@ -8,7 +8,7 @@
         <div class="breadcrumb-content">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li class="active">Single Product</li>
+                <li class="active">Product Detal</li>
             </ul>
         </div>
     </div>
@@ -77,13 +77,15 @@
                             </div>
                         </div> --}}
                         <div class="single-add-to-cart">
-                            <form action="#" class="cart-quantity">
+                            <form action="/cart/add/{{ $prd->id }}" class="cart-quantity" method="POST">
+                                @csrf
                                 <div class="quantity">
                                     <label>Quantity</label>
                                     <div class="cart-plus-minus">
-                                        <input class="cart-plus-minus-box" value="1" type="text">
-                                        <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                        <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
+                                        <input style="width:70px" class="cart-plus-minus-box" name="quantity" value="1" min="1" type="number">
+                                        {{-- <input class="cart-plus-minus-box" value="1" type="text"> --}}
+                                        {{-- <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
+                                        <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div> --}}
                                     </div>
                                 </div>
                                 <button class="add-to-cart" type="submit">Add to cart</button>

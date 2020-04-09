@@ -31,6 +31,8 @@ class ProductController extends Controller
         else
             $data['product'] = Product::where('name', 'LIKE', '%'.$r->search.'%')->paginate(12);
         // dd($product->all());
-        return view('shopping.product.product', $data);
+        if (!$data['product'])
+            return redirect('/404.html');
+        else return view('shopping.product.product', $data);
     }
 }

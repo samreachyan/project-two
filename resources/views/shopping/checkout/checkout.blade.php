@@ -24,6 +24,11 @@
                     {{-- login display  --}}
                     <div class="row">
                         <div class="col-12">
+                            @if (session('thongbao'))
+                            <div class="alert alert-warning">
+                                <p>{{ session('thongbao') }}</p>
+                            </div>
+                            @endif
                             <div class="coupon-accordion">
                                 <!--Accordion Start-->
                                 <h3>Returning customer? <span id="showlogin">Click here to login</span></h3>

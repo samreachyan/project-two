@@ -69,7 +69,7 @@
                 <div class="col-lg-3">
                     <div class="logo pb-sm-30 pb-xs-30">
                         <a href="/index.html">
-                            <img src="images/menu/logo/1.jpg" alt="">
+                            <img src="/backend/img/logo/logo.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -100,9 +100,11 @@
                                 </a>
                             </li>
                             <!-- Header Middle Wishlist Area End Here -->
-                            <?php $total = 0; $cart = Cart::getContent();
+                            <?php 
+                                $total = 0; 
+                                $cart = Cart::getContent();
                                 foreach ($cart as $item) {
-                                    $total = $item->quantity * $item->price;
+                                    $total += $item->quantity * $item->price;
                                 }
                             ?>
                             <!-- Begin Header Mini Cart Area -->

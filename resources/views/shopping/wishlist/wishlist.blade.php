@@ -39,7 +39,8 @@
                                         <td class="li-product-name"><a href="#">{{ $item->product->name }}</a></td>
                                         <td class="li-product-price"><span class="amount">{{ number_format($item->product->price, 0, '', '.') }} VND</span></td>
                                         <td class="li-product-stock-status"><span class="in-stock">@if ($item->product->state == 1) in stock @else sold out @endif</span></td>
-                                        <td class="li-product-add-cart"><a href="#">add to cart</a></td>
+                                        <td class="li-product-add-cart"><a onclick="return addCartQuick({{ $item->id }})" >add to cart</a></td>
+                                        
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -50,4 +51,23 @@
         </div>
     </div>
 </div>
+@endsection
+
+
+@section('script')
+    @parent
+
+    <script>
+        function addCartQuick(id){
+            $.get("/cart/add/"+ id, function(data){
+                if( data == 'success'){
+                    // console.log("add cart");
+                    alert('Add to cart done!!!');
+                    location.reload();
+                } else {
+                    alert('Add to cart failed!!!');
+                }
+            });
+        }
+    </script>
 @endsection
