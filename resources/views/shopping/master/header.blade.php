@@ -77,8 +77,9 @@
                 <!-- Begin Header Middle Right Area -->
                 <div class="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
                     <!-- Begin Header Middle Searchbox Area -->
-                    <form action="#" class="hm-searchbox">
-                        <select class="nice-select select-search-category">
+                    <form action="/search" class="hm-searchbox" method="POST"> 
+                        @csrf
+                        <select class="nice-select select-search-category" name="categoryId" >
                             <option value="0">All</option> 
                             <?php $category = App\Model\Category::get() ?>
                             {{ showCategory($category, 0, '') }}

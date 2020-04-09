@@ -58,7 +58,7 @@
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a onclick="return addCartQuick({{ $item->id }})" >Add to cart</a></li>
-                                                    <li><a class="links-details" href="/wishlist/add{{$item->id}}"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a class="links-details" href="/wishlist/add/{{$item->id}}"><i class="fa fa-heart-o"></i></a></li>
                                                     
                                                 </ul>
                                             </div>
@@ -160,7 +160,7 @@
                                             <div class="add-actions">
                                                 <ul class="add-actions-link">
                                                     <li class="add-cart active"><a onclick="return addCartQuick({{ $item->id }})">Add to cart</a></li>
-                                                    <li><a class="links-details" href="/wishlist/add{{$item->id}}"><i class="fa fa-heart-o"></i></a></li>
+                                                    <li><a class="links-details" href="/wishlist/add/{{$item->id}}"><i class="fa fa-heart-o"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>

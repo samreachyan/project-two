@@ -104,6 +104,8 @@ Route::group(['prefix' => '/'], function () {
     Route::post('/login-client', 'Shopping\LoginRegisterController@Login');
     Route::post('/register-client', 'Shopping\LoginRegisterController@Register');
 
+    Route::post('/search', 'Shopping\ProductController@search');
+
     Route::get('/product', 'Shopping\ProductController@getProduct');
     Route::get('/product-detail/{id}', 'Shopping\ProductController@getProductDetail');
 });

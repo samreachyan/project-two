@@ -53,7 +53,7 @@ function showCategoryList($category,$parent,$chuoiTab) {
 function showCategory($category, $parent, $tab) {
     foreach($category as $key => $value) {
         if($value['parent'] == $parent){
-            echo '<option value="'.$key.'">'.$tab.$value['name'].'</option> ';
+            echo '<option value="'.$value['id'].'">'.$tab.$value['name'].'</option> ';
             showCategory($category, $value['id'], $tab.'-- ');
         }
     }
