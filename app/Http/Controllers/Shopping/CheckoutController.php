@@ -50,6 +50,16 @@ class CheckoutController extends Controller
         }
 
         Cart::clear();
-        return redirect()->back();
+        return redirect('/complete/'.$order->id);
     }
+
+    function getComplete($order_id){
+        $order= Order::find($order_id);
+        $email = $order->email;
+
+        \Mail::to($email)->send(new \App\Mail\Order($order));
+
+        return redirect('/cart.html');
+    }
+
 }
