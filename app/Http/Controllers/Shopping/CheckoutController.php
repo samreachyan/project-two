@@ -8,6 +8,7 @@ use App\Http\Requests\CheckoutRequest;
 use Cart;
 use App\Model\Order;
 use App\Model\Product_Order;
+use App\Mail;
 
 class CheckoutController extends Controller
 {
@@ -50,6 +51,20 @@ class CheckoutController extends Controller
         }
 
         Cart::clear();
-        return redirect()->back();
+        return redirect('/complete/'.$order->id);
     }
+
+    function getComplete($order_id){
+        $data['order'] = Order::find($order_id);
+        $data['mail'] = $data['order']->email;
+
+        Mail::send('shopping.mail.order_detail', $data, function ($message) {
+            $message->from('samreachyan@gmail.com', 'SAMREACH SHOP');
+            $message->to($data['mail'], 'Customer');
+            $message->subject('Order Detail from SAMREACH');
+        });
+
+        return redirect('/cart.html');
+    }
+
 }

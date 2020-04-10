@@ -81,6 +81,8 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/about-us.html', 'Shopping\IndexController@getAboutUs');
     Route::get('/faq.html', 'Shopping\IndexController@getFaq');
     Route::get('/404.html', 'Shopping\IndexController@get404');
+    
+    Route::post('/subscribe', 'Shopping\EmailController@getSubscribe');
 
     Route::get('/contact.html', 'Shopping\ContactController@getContact');
     Route::post('/contact.html', 'Shopping\ContactController@postContact');
@@ -93,7 +95,7 @@ Route::group(['prefix' => '/'], function () {
 
     Route::get('/checkout.html', 'Shopping\CheckoutController@getCheckout');
     Route::post('/checkout.html', 'Shopping\CheckoutController@postCheckout');
-
+    Route::get('/complete/{order}', 'Shopping\CheckoutController@getComplete');
 
     Route::get('/compare.html', 'Shopping\CompareController@getCompare');
 
