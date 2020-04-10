@@ -10,8 +10,8 @@
                             <div class="slider-progress"></div>
                             <div class="slider-content">
                                 <h5 style="color:white">Sale Offer <span>-20% Off</span> This Week</h5>
-                                <h2 style="color:white">Chamcham Galaxy S9 | S9+</h2>
-                                <h3 style="color:white">Starting at <span>$1209.00</span></h3>
+                                <h2 style="color:white">Áo Khoác Khaki AK266 Màu Rêu </h2>
+                                <h3 style="color:white">Starting at <span>500.000 VND</span></h3>
                                 <div class="default-btn slide-btn">
                                     <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
                                 </div>
@@ -23,8 +23,8 @@
                             <div class="slider-progress"></div>
                             <div class="slider-content">
                                 <h5 style="color:white">Sale Offer <span>Black Friday</span> This Week</h5>
-                                <h2 style="color:white">Work Desk Surface Studio 2018</h2>
-                                <h3 style="color:white">Starting at <span>$824.00</span></h3>
+                                <h2 style="color:white">Áo Khoác Khaki AK266 Màu Đen</h2>
+                                <h3 style="color:white">Starting at <span>250.000 VND</span></h3>
                                 <div class="default-btn slide-btn">
                                     <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
                                 </div>
@@ -36,8 +36,8 @@
                             <div class="slider-progress"></div>
                             <div class="slider-content">
                                 <h5 style="color:white">Sale Offer <span>-10% Off</span> This Week</h5>
-                                <h2 style="color:white">Phantom 4 Pro+ Obsidian</h2>
-                                <h3 style="color:white">Starting at <span>$1849.00</span></h3>
+                                <h2 style="color:white">sản phẩm thời trang hot trong bộ sưu tập thời trang</h2>
+                                <h3 style="color:white">Starting at <span>350.000 VND</span></h3>
                                 <div class="default-btn slide-btn">
                                     <a class="links" href="shop-left-sidebar.html">Shopping Now</a>
                                 </div>
