@@ -154,7 +154,7 @@
                                                 </div>
                                                 <h4><a class="product_name" href="/product-detail/{{$item->id}}">{{ $item->name }}</a></h4>
                                                 <div class="price-box">
-                                                    <span class="new-price">$46.80</span>
+                                                    <span class="new-price">{{ number_format($item->price, 0, '', '.') }} VND</span>
                                                 </div>
                                             </div>
                                             <div class="add-actions">
