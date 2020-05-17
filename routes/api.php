@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Resources\ProductCollection;
+use App\Http\Resources\ProductDetailCollection;
 use App\Model\Product;
 /*
 |--------------------------------------------------------------------------
@@ -24,4 +25,7 @@ Route::get('/products', 'API\ProductController@getProduct');
 
 Route::get('/get-products', function () {
     return new ProductCollection(Product::paginate(2));
+});
+Route::get('/product/{id}', function ($id) {
+    return new ProductDetailCollection(Product::where('id', $id)->get());
 });
