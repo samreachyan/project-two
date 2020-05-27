@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>@yield('title')</title>
-    <meta name="description" content="">
+    <meta name="description" content="Samreach Demo Website For Online Clothes Project on Google Platform">
+
+    @include('shopping.master.og')
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="{{ asset('shopping') }}/" >
     <!-- Favicon -->
