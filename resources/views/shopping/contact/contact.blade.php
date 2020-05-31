@@ -60,25 +60,29 @@
                                 <div class="form-group">
                                     <label>Your Name <span class="required">*</span></label>
                                     <input type="text" name="customerName" id="customername" required>
+                                    {{ showError($errors, 'customerName') }}
                                 </div>
                                 <div class="form-group">
                                     <label>Your Email <span class="required">*</span></label>
                                     <input type="email" name="customerEmail" id="customerEmail" required>
+                                    {{ showError($errors, 'customerEmail') }}
                                 </div>
                                 <div class="form-group">
                                     <label>Subject</label>
                                     <input type="text" name="contactSubject" id="contactSubject">
+                                    {{ showError($errors, 'contactSubject') }}
                                 </div>
                                 <div class="form-group mb-30">
                                     <label>Your Message</label>
                                     <textarea name="contactMessage" id="contactMessage" ></textarea>
+                                    {{ showError($errors, 'contactMessage') }}
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" value="submit" id="submit" class="li-btn-3" name="submit">send</button>
+                                    {{-- <button type="submit" value="submit" id="submit" class="li-btn-3" name="submit">send</button> --}}
+                                    <input type="submit" class="li-btn-3" value="Send">
                                 </div>
                             </form>
                         </div>
-                        <p class="form-messege"></p>
                     </div>
                 </div>
             </div>

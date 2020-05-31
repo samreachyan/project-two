@@ -8,6 +8,7 @@
         <li @yield('product')><a href="/admin/product"><svg class="glyph stroked bag"><use xlink:href="#stroked-bag"></use></svg> Sản phẩm</a></li>
         <li @yield('comment')><a href="/admin/comment"><svg class="glyph stroked empty-message "><use xlink:href="#stroked-empty-message"/></svg>Bình luận sản phẩm</a></li>
         <li @yield('client')><a href="/admin/client"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg>Khách hàng</a></li>
+        <li @yield('contact')><a href="/admin/contact"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg>Báo cáo</a></li>
         <li @yield('order')><a href="/admin/order"><svg class="glyph stroked notepad "><use xlink:href="#stroked-notepad" /></svg> Đơn hàng</a></li>
         <li @yield('user')><a href="/admin/user"><svg class="glyph stroked male user "><use xlink:href="#stroked-male-user"/></svg>Thành viên</a></li>
         <li role="presentation" class="divider"></li>

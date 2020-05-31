@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Resources\Product as ProductResource;
 use App\Model\Product;
 
 /*
@@ -14,9 +13,6 @@ use App\Model\Product;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/api/products', function () {
-    return new ProductResource(Product::first());
-});
 
 
 Route::get('/login', 'Admin\LoginController@getLogin')->middleware('CheckLogout');
@@ -53,6 +49,8 @@ Route::group(['prefix' => 'admin', 'middleware'=>'CheckLogin'], function () {
     Route::get('/client', 'Admin\ClientController@getClient');
     Route::get('/client/edit', 'Admin\ClientController@getEditClient');
 
+    Route::get('/contact', 'Admin\ContactController@getContact');
+    Route::get('/contact/del/{id}', 'Admin\ContactController@delContact');
     
     Route::group(['prefix' => 'order'], function () {
         Route::get('/', 'Admin\OrderController@getOrder');
